@@ -7,6 +7,7 @@
     <persistence-unit name="JPAs" 
         transaction-type="RESOURCE_LOCAL">
         <class>edu.uth.pojo.Student</class>
+        <class>edu.uth.dao.StudenDAO</class>
         <properties>
             <!-- DATABASE-->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
