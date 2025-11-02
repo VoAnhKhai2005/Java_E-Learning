@@ -2,9 +2,10 @@ package edu.uth.dao;
 
 import java.util.List;
 
-import jakarta.persistence.*;
-
 import edu.uth.pojo.Student;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 
 public class StudentDAO {
     private static EntityManager em;
@@ -77,7 +78,7 @@ public class StudentDAO {
             em = emf.createEntityManager();
             em.getTransaction().begin();
             Student s = em.find(Student.class, student.getId());
-            if(s != null) {
+            if (s != null) {
                 s.setFirstName(student.getFirstName());
                 s.setLastName(student.getLastName());
                 s.setMarks(student.getMarks());
@@ -90,5 +91,4 @@ public class StudentDAO {
             em.close();
         }
     }
-
 }
